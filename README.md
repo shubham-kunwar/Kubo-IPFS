@@ -10,19 +10,6 @@
 
 <hr />
 
-## What is Kubo?
-
-Kubo was the first IPFS implementation and is the most widely used one today. Implementing the *Interplanetary Filesystem* - the Web3 standard for content-addressing, interoperable with HTTP. Thus powered by IPLD's data models and the libp2p for network communication. Kubo is written in Go.
-
-## What is IPFS?
-
-IPFS is a global, versioned, peer-to-peer filesystem. It combines good ideas from previous systems such as Git, BitTorrent, Kademlia, SFS, and the Web. It is like a single BitTorrent swarm, exchanging git objects. IPFS provides an interface as simple as the HTTP web, but with permanence built-in. You can also mount the world at /ipfs.
-
-For more info see: https://docs.ipfs.tech/concepts/what-is-ipfs/
-
-### Minimal System Requirements
-
-IPFS can run on most Linux, macOS, and Windows systems. We recommend running it on a machine with at least 4 GB of RAM and 2 CPU cores (kubo is highly parallel). On systems with less memory, it may not be completely stable, and you run on your own risk.
 
 #### Using With Docker Command 
 
