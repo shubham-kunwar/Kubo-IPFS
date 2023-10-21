@@ -41,6 +41,11 @@ Access IPFS Commands:
 docker exec -it ehr-ipfs-container ipfs --version
 ```
 
+initialize configuration files and generate a new keypair
+```console
+docker exec -it ehr-ipfs-container ipfs daemon --init
+```
+
 Watch the ipfs log:
 ```console
 docker logs -f ehr-ipfs-container
