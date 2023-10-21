@@ -6,7 +6,7 @@
   <br>
 </h1>
 
-<p align="center" style="font-size: 1.2rem;">  Forked from [Kubo-IPFS](https://github.com/ipfs/kubo).</p>
+<p align="center" style="font-size: 1.2rem;">  Forked from [Kubo-IPFS](https://github.com/ipfs/kubo) </p>
 
 <hr />
 
@@ -30,25 +30,39 @@ docker build -t ipfs_host .
 Run the docker container:
 
 ```console
-docker run -d --name ehr-ipfs-container -v C:\path\to\ipfs_staging:/export -v C:\path\to\ipfs_data:/data/ipfs -p 4001:4001 -p 4001:4001/udp -p 127.0.0.1:8080:8080 -p 127.0.0.1:5001:5001 ipfs_host
+docker run -d --name ehr-ipfs-container -v /ipfs_staging -v /ipfs_data -p 4001:4001 -p 4001:4001/udp -p 127.0.0.1:8080:8080 -p 127.0.0.1:5001:5001 ipfs_host 
 ```
+
 In this command:
-Replace C:\path\to\ipfs_staging with the actual path to your IPFS staging directory.
-Replace C:\path\to\ipfs_data with the actual path to your IPFS data directory.
+Replace /ipfs_staging with the actual path to your IPFS staging directory. <br>
+
+Replace /ipfs_data with the actual path to your IPFS data directory.
 
 Access IPFS Commands:
 ```console
-docker exec -it ehr-ipfs-container ipfs --version
+docker exec -it ehr-ipfs ipfs --version
 ```
 
 initialize configuration files and generate a new keypair
 ```console
-docker exec -it ehr-ipfs-container ipfs daemon --init
+docker exec -it ehr-ipfs ipfs daemon --init
 ```
+
+# add files to Ipfs
+
+```
+cp -r .\imagetest.png .\ipfs-staging\
+```
+```
+docker exec ehr-ipfs ipfs add -r .\ipfs-staging\
+```
+
+
+
 
 Watch the ipfs log:
 ```console
-docker logs -f ehr-ipfs-container
+docker logs -f ehr-ipfs
 ```
 
 or Open docker container:
@@ -60,7 +74,7 @@ docker ps
 
 execute the container:
 ```console
-docker exec -it container-id sh
+docker exec -it <container-id> sh
 ```
 
 check ipfs version:
