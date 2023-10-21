@@ -30,8 +30,11 @@ docker build -t ipfs_host .
 Run the docker container:
 
 ```console
-docker run -d --name ehr-ipfs-container -v /export -v /data/ipfs -p 4001:4001 -p 4001:4001/udp -p 127.0.0.1:8080:8080 -p 127.0.0.1:5001:5001 ipfs_host
+docker run -d --name ehr-ipfs-container -v C:\path\to\ipfs_staging:/export -v C:\path\to\ipfs_data:/data/ipfs -p 4001:4001 -p 4001:4001/udp -p 127.0.0.1:8080:8080 -p 127.0.0.1:5001:5001 ipfs_host
 ```
+In this command:
+Replace C:\path\to\ipfs_staging with the actual path to your IPFS staging directory.
+Replace C:\path\to\ipfs_data with the actual path to your IPFS data directory.
 
 Access IPFS Commands:
 ```console
